@@ -10,6 +10,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { DetallesComponent } from './components/detalles/detalles.component';
 import { MarcasComponent } from './components/marcas/marcas.component';
 import { LoginComponent } from './components/login/login.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginComponent } from './components/login/login.component';
     MenuComponent,
     DetallesComponent,
     MarcasComponent,
-    LoginComponent
+    LoginComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

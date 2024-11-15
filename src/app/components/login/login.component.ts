@@ -9,7 +9,7 @@ import { ServiceCubos } from '../../services/service.cubos';
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit {
-  @ViewChild("cajausuario") cajaUsuario!: ElementRef;
+  @ViewChild("cajaemail") cajaEmail!: ElementRef;
   @ViewChild("cajapassword") cajaPassword!: ElementRef;
 
   public respuesta!: string;
@@ -19,9 +19,9 @@ export class LoginComponent implements OnInit {
   ){}
 
   loginUsuario(): void {
-    let userName = this.cajaUsuario.nativeElement.value;
+    let email = this.cajaEmail.nativeElement.value;
     let password = this.cajaPassword.nativeElement.value;
-    let user = new Login(userName, password);
+    let user = new Login(email, password);
     this._service.loginEmpleado(user).subscribe(response => {
       console.log("listo");
       console.log(response.response);
