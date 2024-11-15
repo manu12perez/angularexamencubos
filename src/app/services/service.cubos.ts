@@ -13,12 +13,19 @@ export class ServiceCubos {
         this.token = "";
     }
 
-    loginEmpleado(user: Login): Observable<any> {
+    login(user: Login): Observable<any> {
         let json = JSON.stringify(user);
         let header = new HttpHeaders().set("Content-type", "application/json");
         let request = "api/Manage/Login";
         let url = environment.urlApiCubos + request;
         return this._http.post(url, json, {headers: header});
+    }
+
+    getPerfil(): Observable<any> {
+        let request = "api/Manage/PerfilUsuario";
+        let url = environment.urlApiCubos + request;
+        let header = new HttpHeaders().set("Authorization", "bearer " + this.token);
+        return this._http.get(url, {headers: header});
     }
 
     getCubos(): Observable<any> {

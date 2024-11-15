@@ -22,12 +22,12 @@ export class LoginComponent implements OnInit {
     let email = this.cajaEmail.nativeElement.value;
     let password = this.cajaPassword.nativeElement.value;
     let user = new Login(email, password);
-    this._service.loginEmpleado(user).subscribe(response => {
+    this._service.login(user).subscribe(response => {
       console.log("listo");
       console.log(response.response);
       this._service.token = response.response;
       this.respuesta = response.response;
-      this._router.navigate(["/perfil"]);
+      // this._router.navigate(["/perfil"]);
     })
   }
 

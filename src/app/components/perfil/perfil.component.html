@@ -1,1 +1,17 @@
-<p>perfil works!</p>
+<div>
+    <h1>Perfil del empleado</h1>
+    @if (perfil){
+        <ul class="list-group">
+            <li class="list-group-item">
+                Id {{perfil.idUsuario}}
+            </li>
+            <li class="list-group-item">
+                Nombre {{perfil.nombre}}
+            </li>
+            <li class="list-group-item">
+                Email {{perfil.email}}
+            </li>
+        </ul>
+    }
+
+</div>
