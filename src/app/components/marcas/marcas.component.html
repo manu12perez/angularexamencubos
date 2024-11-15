@@ -1,0 +1,31 @@
+<div>
+    <h1>Marcas</h1>
+    <div class="row">
+        @for (cubo of cubos; track cubo) {
+        <div class="col-12 col-md-4">
+
+            <div class="card">
+                <img src={{cubo.imagen}} class="card-img-top" alt="Imagen del cubo" />
+                <div class="card-body">
+                    <h5 class="card-title">{{ cubo.nombre }}</h5>
+                    <p class="card-text">Precio: {{ cubo.precio }}</p>
+                    <a [routerLink]="[
+                            '/detalles', 
+                            cubo.idCubo, 
+                            cubo.nombre, 
+                            cubo.modelo, 
+                            cubo.marca, 
+                            cubo.color, 
+                            cubo.imagen, 
+                            cubo.precio, 
+                            cubo.valoracion
+                        ]" class="btn btn-info">
+                        Detalles
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        }
+    </div>
+</div>

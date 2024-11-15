@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" [routerLink]="['/']"><img src="https://www.pngrepo.com/png/303230/512/angular-icon-logo.png"
+            style="height: 40px; width: 40px;" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a [routerLink]="['/']" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a [routerLink]="['/login']" class="nav-link">Login</a>
+          </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                  Marcas
+                </a>
+                <ul class="dropdown-menu">
+                    @for (marca of marcas; track marca) {
+                  <li v-for="marca in marcas" :key="marca">
+                    <a [routerLink]="['/marcas/' + marca]"
+                        class="btn btn-info">
+                        {{marca}}
+                    </a>
+                  </li>
+                }
+                </ul>
+              </li>
+        </ul>
+    </div>
+</nav>

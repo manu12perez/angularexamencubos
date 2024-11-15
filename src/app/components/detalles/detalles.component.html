@@ -1,0 +1,36 @@
+<div>
+    <h1>Detalles Cubo</h1>
+
+    <div>
+        <div class="card" style="width: 18rem;">
+            <img src={{cubo.imagen}} class="card-img-top" alt="Imagen del cubo" />
+            <div class="card-body">
+                <h5 class="card-title">{{ cubo.nombre }}</h5>
+                <p class="card-text"><strong>Modelo:</strong> {{ cubo.modelo }}</p>
+                <p class="card-text"><strong>Marca:</strong> {{ cubo.marca }}</p>
+                <p class="card-text"><strong>Color:</strong> {{ cubo.color }}</p>
+                <p class="card-text"><strong>Valoración:</strong> {{ cubo.valoracion }} estrellas</p>
+                <p class="card-text"><strong>Precio:</strong> ${{ cubo.precio }}</p>
+                <p><a [routerLink]="['/']" class="btn btn-secondary">Volver</a></p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Comentarios</h2>
+    <div *ngIf="comentarios.length > 0">
+        <div *ngFor="let comentario of comentarios" class="comment-card">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <p class="card-text">{{ comentario.comentario }}</p>
+                    <small class="text-muted">Fecha: {{ comentario.fechaComentario }}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Si no hay comentarios, mostrar mensaje -->
+    <div *ngIf="comentarios.length === 0">
+        <p>No hay comentarios para este cubo.</p>
+    </div>
+
+</div>
